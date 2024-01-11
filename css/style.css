@@ -1,0 +1,272 @@
+/* global */
+html {
+  font-family: "Roboto", sans-serif;
+  color: #383838;
+  scroll-behavior: smooth;
+}
+main {
+  text-align: center;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+.nav {
+  background-color: white;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  box-sizing: border-box;
+}
+.nav > ul > li > a {
+  position: relative;
+  text-decoration: none;
+  color: #383838;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+.nav > ul > li > a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: #af5a6c;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+.nav > ul > li > a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.nav ul {
+  list-style: none;
+}
+.logo {
+  font-size: 1.5em;
+  font-family: "DM Serif Display", serif;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  color: #af5a6c;
+}
+#hamburger {
+  display: none;
+}
+#overlay {
+  display: none;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-auto-rows: min-content;
+  grid-row-gap: 60px;
+  grid-column-gap: 60px;
+}
+a {
+  text-decoration: none;
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  .nav {
+    background-color: white;
+    padding: 0 3%;
+  }
+  .nav ul {
+    display: flex;
+    justify-content: space-between;
+    max-width: 225px;
+    width: 140%;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  main {
+    margin: 0 10%;
+  }
+  footer {
+    margin: 0 15%;
+  }
+}
+
+/* mobile */
+@media (max-width: 767px) {
+  .nav {
+    padding: 5% 4%;
+  }
+  .nav ul {
+    display: none;
+    width: 100%;
+    max-width: 70vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+    padding: 2% 0;
+    margin: 0;
+    padding: 5% 6%;
+    font-size: 1.5em;
+  }
+
+  .nav ul.on {
+    display: block;
+  }
+  .nav ul li {
+    padding: 5% 5%;
+  }
+  #hamburger {
+    display: block;
+    height: 20px;
+  }
+  #overlay {
+    display: none;
+    background-color: white;
+    width: 100vh;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 0.5;
+  }
+  #overlay.on {
+    display: block;
+  }
+  body.hidden {
+    overflow: hidden;
+  }
+  main {
+    margin: 0 9%;
+  }
+  .grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1000px) {
+  footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* header */
+.work-header {
+  text-align: left;
+  vertical-align: middle;
+  display: table-cell;
+  height: 100vh;
+}
+
+header {
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+header > a {
+  color: #383838;
+  text-decoration: none;
+  background: linear-gradient(to bottom, #af5a6c 50%, #af5a6c 50%) left bottom
+    repeat-x;
+  background-size: 1px 5px;
+}
+.work-header > p {
+  margin: 1em 0 0 0;
+}
+#coverpic {
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* grid */
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0 18%;
+}
+.grid-item:hover {
+  opacity: 70%;
+  transition: ease-in-out.3s;
+  transform: scale(0.99);
+}
+.grid-image {
+  width: 100%;
+  position: relative;
+  padding-bottom: 75%;
+}
+.grid-image-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.grid-image-wrapper > img {
+  width: 100%;
+  height: 100%;
+  object-position: 50% 50%;
+  object-fit: cover;
+}
+.overlay {
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+h1 {
+  color: #383838;
+  margin: 0.5em 0 0 0;
+  font-size: 1.4em;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+h2 {
+  font-weight: 300;
+  text-align: left;
+  margin: 0.5em 0 0 0;
+  font-size: 1.2em;
+  color: #383838;
+}
+h3 {
+  font-weight: 300;
+  text-align: left;
+  margin: 1em 10px 0 0;
+  font-size: 1em;
+  color: #383838;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  background-color: #e8e8e8;
+  padding: 4px 7px;
+}
+.description {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 450px;
+}
+p {
+  color: #383838;
+}
+footer {
+  text-align: center;
+  padding: 4.5em 0 1em 0;
+}
+footer > p {
+  font-weight: 300;
+  color: rgb(143, 141, 141);
+}
