@@ -1,0 +1,455 @@
+/* global */
+html {
+    font-family: "Roboto", sans-serif;
+    color: #383838;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .nav {
+    background-color: white;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    box-sizing: border-box;
+  }
+  .nav > ul > li > a {
+    position: relative;
+    text-decoration: none;
+    color: #383838;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  .nav > ul > li > a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #af5a6c;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+  .nav > ul > li > a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+  
+  .nav ul {
+    list-style: none;
+  }
+  .logo {
+    font-size: 1.5em;
+    font-family: "DM Serif Display", serif;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    color: #af5a6c;
+  }
+  #hamburger {
+    display: none;
+  }
+  #overlay {
+    display: none;
+  }
+  
+  .progress-bar {
+    height: 3px;
+    background: #483460;
+    position: fixed;
+    width: 0%;
+    margin: 0;
+    padding: 0;
+    top: 60px;
+  }
+  
+  h1 {
+    font-weight: 900;
+    margin: 0;
+    padding-bottom: 1em;
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+  }
+  
+  h2 {
+    font-size: 1em;
+    margin: 0;
+    line-height: 1.8em;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+  }
+  p {
+    margin: 0;
+    line-height: 1.6em;
+    font-weight: 300;
+  }
+  
+  /* desktop */
+  @media (min-width: 768px) {
+    .nav {
+      background-color: white;
+      padding: 0 3%;
+    }
+    .nav ul {
+      display: flex;
+      justify-content: space-between;
+      max-width: 225px;
+      width: 140%;
+      list-style-type: none;
+      padding: 0;
+    }
+    .progress-bar {
+      z-index: 1;
+    }
+  
+    .design-process {
+      margin: 0 25%;
+    }
+    .list-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+    .list-number {
+      padding-right: 1em;
+    }
+    .header-image {
+      display: flex;
+      object-fit: cover;
+      width: 100%;
+    }
+    header {
+      margin: 0 10%;
+    }
+    .sections {
+      margin: 0 25%;
+    }
+    .final-solution-content {
+      display: flex;
+      align-items: center;
+    }
+    .final-solution-one-content {
+      margin-right: 6em;
+      width: 70%;
+    }
+    .final-solution-two-content {
+      margin-left: 6em;
+      width: 70%;
+    }
+    footer {
+      margin: 0 25%;
+    }
+  }
+  
+  /* mobile */
+  @media (max-width: 767px) {
+    .nav {
+      padding: 7% 4%;
+    }
+    .nav ul {
+      display: none;
+      width: 100%;
+      max-width: 70vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: white;
+      z-index: 1;
+      padding: 2% 0;
+      margin: 0;
+      padding: 5% 6%;
+      font-size: 1.5em;
+    }
+  
+    .nav ul.on {
+      display: block;
+    }
+    .nav ul li {
+      padding: 5% 5%;
+    }
+    #hamburger {
+      display: block;
+      height: 20px;
+    }
+    #overlay {
+      display: none;
+      background-color: white;
+      width: 100vh;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      opacity: 0.5;
+    }
+    #overlay.on {
+      display: block;
+    }
+    body.hidden {
+      overflow: hidden;
+    }
+    header {
+      margin: 0 9%;
+    }
+    .design-process {
+      margin: 0 9%;
+    }
+    .sections {
+      margin: 0 9%;
+    }
+    .list-number > p {
+      padding-bottom: 0;
+    }
+    .final-solution-prototype {
+      order: 2;
+      margin: 1em auto 0 auto;
+    }
+    .final-solution-content {
+      display: flex;
+      flex-direction: column;
+    }
+    .final-solution-two-content {
+      order: 1;
+    }
+    .next-page {
+      margin: 0 9%;
+    }
+  }
+  @media (max-width: 999px) {
+    .background {
+      padding-bottom: 1.5em;
+    }
+    .goal-image > img {
+      width: 5em;
+    }
+  }
+  @media (min-width: 1000px) {
+    .overview {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .context {
+      margin-right: 10%;
+    }
+    .background {
+      max-width: 53%;
+      margin-left: 10%;
+    }
+    .goals {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .goal-image {
+      padding-right: 4.5em;
+    }
+    .goal-image > img {
+      width: 8em;
+    }
+    footer {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .image {
+    border-radius: 5px;
+    cursor: zoom-in;
+    transition: 0.3s;
+    width: 100%;
+  }
+  
+  .image:hover {
+    opacity: 0.7;
+    cursor: zoom-in;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    margin: 0;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+  
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(255, 255, 255, 0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-height: 95%;
+    max-width: 95%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+  .modal:hover {
+    cursor: zoom-out;
+  }
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px) {
+    .modal-content {
+      width: 100%;
+    }
+  }
+  /* header */
+  header {
+    padding-top: 80px;
+    align-items: center;
+  }
+  
+  span {
+    font-weight: 500;
+  }
+  .sections-container {
+    background: #d6d2ee;
+    padding-bottom: 6em ;
+  }
+  
+  .list-number {
+    color: #483460;
+    font-size: 3em;
+    font-weight: bold;
+  }
+  /* overview */
+  .overview {
+    text-align: left;
+    padding: 3em 0 5em 0;
+  }
+  .design-process {
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 6em 0 2.5em 0;
+    letter-spacing: 0.1em;
+  }
+  /* why the redesign */
+  #why-redesign {
+    padding-bottom: 6em;
+  }
+  /* user expectations */
+  #user-expectations {
+    padding: 0 0 6em 0;
+    align-items: center;
+  }
+  .small-container {
+    background-color: #d6d2ee;
+    padding: 4% 15%;
+    border-radius: 1em;
+    width: fit-content;
+    margin: auto;
+  }
+  
+  /* identifying the problem */
+  .reviews {
+    padding: 2em 0 2em 0;
+  }
+  
+  /* current layout */
+  #current-layout {
+    padding-bottom: 6em;
+  }
+  .layout-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-top: 2em;
+  }
+  
+  /* current user journey */
+  #current-user-journey {
+    padding: 0 0 6em 0;
+  }
+  
+  /* comparative analysis */
+  #comparative-analysis {
+    padding-bottom: 6em;
+  }
+  /* proposed solutions */
+  #proposed-solution {
+    padding-bottom: 6em;
+  }
+  .goals {
+    padding-top: 2em;
+  }
+  /* wireframe user journey*/
+  #new-user-journey {
+    padding: 0 0 6em 0;
+  }
+  /* refined solution */
+  .refined-solution-image {
+    margin: 0 25%;
+  }
+  
+  /* final solution */
+  #final-solution {
+    padding-bottom: 6.5em;
+  }
+  .final-solution-prototype {
+    box-shadow: 15px 15px 25px 10px rgba(0, 0, 0, 0.09);
+    width: 40%;
+  }
+  video {
+    width: 100%;
+  }
+  
+  /* other pages */
+  .next-page {
+    padding: 6em 0 12em 0;
+    text-align: center;
+  }
+  .next-page > p {
+    font-weight: 300;
+  }
+  .next-page > p > a {
+    color: #383838;
+    text-decoration: underline;
+    text-decoration-color: #af5a6c;
+  }
+  /* footer */
+  footer {
+    text-align: center;
+    padding: 4.5em 0 1em 0;
+  }
+  footer > p {
+    font-weight: 300;
+    color: rgb(143, 141, 141);
+  }
+  
